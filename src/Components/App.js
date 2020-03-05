@@ -29,15 +29,18 @@ class App extends Component {
   }
 
   handleFilter = (e) => {
-    e.target.value === "No Filter" ? this.setState({ filterRating:"" }) : this.setState({ filterRating: e.target.value})
+    
+    const target = e.target;
+    console.log(`handeling filter: ${target.value}`)
+    target.value === "No Filter" ? this.setState({ filterByRating:"" }) : this.setState({ filterByRating: target.value})
   }
 
   selectShow = (show) => {
-    Adapter.getShowEpisodes(show.id)
-    .then((episodes) => this.setState({
-      selectedShow: show,
-      episodes
-    }))
+    Adapter.getShowEpisodes(show.id).then(episodes => {
+      this.setState({
+        selectedShow: show,
+        episodes,
+    })})
   }
 
   displayShows = () => {

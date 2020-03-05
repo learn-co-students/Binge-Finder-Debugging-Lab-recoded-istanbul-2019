@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Episode from './Components/Episode';
+import Episode from './Episode';
 
 class SelectedShowContainer extends Component {
 
@@ -51,7 +51,6 @@ class SelectedShowContainer extends Component {
 
 }
 
-export SelectedShowContainer;
 
 
 Array.prototype.unique = function() {
@@ -63,3 +62,5 @@ Array.prototype.unique = function() {
   }
   return arr;
 }
+
+export default SelectedShowContainer;

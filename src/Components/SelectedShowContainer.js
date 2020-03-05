@@ -19,7 +19,7 @@ class SelectedShowContainer extends Component {
 
   mapEpisodes = () => {
     return this.props.allEpisodes.map((e)=>{
-      if (e.season == this.state.selectedSeason){
+      if (e.season === parseInt( this.state.selectedSeason )){
         return (<Episode eachEpisode={e} key={e.id}/>)
       }
     })

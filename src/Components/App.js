@@ -13,7 +13,6 @@ class App extends Component {
     searchTerm: "",
     selectedShow: "",
     episodes: [],
-    filterByRating: "",
   }
 
   componentDidMount = () => {
@@ -24,7 +23,7 @@ class App extends Component {
     window.scrollTo(0, 0)
   }
 
-  handleSearch (e){
+  handleSearch = (e)=>{
     this.setState({ searchTerm: e.target.value.toLowerCase() })
   }
 
@@ -41,13 +40,20 @@ class App extends Component {
   }
 
   displayShows = () => {
-    if (this.state.filterByRating){
-      return this.state.shows.filter((s)=> {
-        return s.rating.average >= this.state.filterByRating
+    let result = []
+    if (this.state.filterRating){
+      result = this.state.shows.filter((s)=> {
+        return s.rating.average >= this.state.filterRating
       })
     } else {
-      return this.state.shows
+      result = this.state.shows
     }
+    // if(this.state.searchTerm){
+    //   result = result.find((movie)=>{
+    //     movie.name 
+    //   })
+    // }
+    return result;
   }
 
   render (){

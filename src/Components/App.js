@@ -8,16 +8,21 @@ import { Grid } from 'semantic-ui-react';
 
 
 class App extends Component {
-  state = {
-    shows: [],
-    searchTerm: "",
-    selectedShow: "",
-    episodes: [],
-    filterByRating: "",
+
+  constructor(){
+    super()
+    this. state = {
+      shows: [],
+      searchTerm: "",
+      selectedShow: "",
+      episodes: [],
+      filterByRating: "",
+    }
   }
+ 
 
   componentDidMount = () => {
-    Adapter.getShows().then(shows => this.setState({shows}))
+    Adapter.getShows().then(shows => this.setState({shows:shows}))
   }
 
   componentDidUpdate = () => {

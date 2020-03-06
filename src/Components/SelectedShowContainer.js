@@ -63,3 +63,4 @@ Array.prototype.unique = function() {
   }
   return arr;
 }
+export default SelectedShowContainer;

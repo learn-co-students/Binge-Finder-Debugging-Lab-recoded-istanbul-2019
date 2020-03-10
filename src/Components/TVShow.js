@@ -4,7 +4,7 @@ const tvShow = () => {
   return (
     <div>
       <br/>
-      <img src={props.image.medium} onClick={props.selectShow} alt=""/>
+      <img src={this.props.image.medium} onClick={this.props.selectShow} alt=""/>
     </div>
   );
 }

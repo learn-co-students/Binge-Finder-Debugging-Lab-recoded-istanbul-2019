@@ -1,29 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Grid} from 'semantic-ui-react';
+import TVShow from './TVShow'
 
-class TVShowList extends Component {
-
-  mapAllShows = () => {
+  const TVShowList = (props) => {
     if (!!props.searchTerm){
-      props.shows.map((s) => {
+     return props.shows.map((s) => {
         if (s.name.toLowerCase().includes(props.searchTerm)){
-          (<TVShow show={s} key={s.id} selectShow={props.selectShow}/> )
+         return  (<TVShow show={s} key={s.id} selectShow={props.selectShow}/> )
         }
       })
     }
-    return props.shows.map( (s)=> <TVShow show={s} key={s.id} selectShow={props.selectShow}/>)
-  }
-
-  render() {
-    return (
-      <div className="TVShowList">
-        <Grid>
-          {this.mapAllShows()}
-        </Grid>
+    return(
+      <div className='TVShowList'>
+      {props.shows.map( (s)=>{
+      <Grid><TVShow show={s} key={s.id} selectShow={props.selectShow}/></Grid> 
+      })}
       </div>
+
     )
-  }
+    }
 
-}
 
-export default TVShowList;
+export default TVShowList

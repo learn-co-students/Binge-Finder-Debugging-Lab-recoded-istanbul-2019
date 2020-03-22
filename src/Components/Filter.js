@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Filter = (props) => {
+ const Filter = (props) => {
   return (
     <div>
     <h4> Filter By Rating </h4>
@@ -19,3 +19,5 @@ const Filter = (props) => {
     </div>
   )
 }
+
+export default Filter;

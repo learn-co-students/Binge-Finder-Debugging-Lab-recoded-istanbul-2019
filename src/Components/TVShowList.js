@@ -13,7 +13,7 @@ class TVShowList extends Component {
     }
    return this.props.shows.map((s)=> (<TVShow show={s} key={s.id} selectShow={this.props.selectShow}/>))
   }
-
+///
   render() {
     return (
       <div className="TVShowList">

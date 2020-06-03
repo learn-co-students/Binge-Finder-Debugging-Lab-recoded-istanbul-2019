@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    Adapter.getShows().then(shows => this.setState({shows}))
+    Adapter.getShows().then(shows => this.setState({shows: shows}))
   }
 
   componentDidUpdate = () => {
@@ -50,13 +50,13 @@ class App extends Component {
     }
   }
 
-  render (){
+  render() {
     return (
       <div>
         <Nav handleFilter={this.handleFilter} handleSearch={this.handleSearch} searchTerm={this.state.searchTerm}/>
         <Grid celled>
           <Grid.Column width={5}>
-            {!!this.state.selectedShow ? <SelectedShowContainer selectedShow={this.state.selectedShow} allEpisodes={this.state.episodes}/> : <div/>}
+            {!!this.state.selectedShow ? <SelectedShowContainer selectedShow={this.state.selectedShow} episodes={this.state.episodes}/> : <div/>}
           </Grid.Column>
           <Grid.Column width={11}>
             <TVShowList shows={this.displayShows()} selectShow={this.selectShow} searchTerm={this.state.searchTerm}/>

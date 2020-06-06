@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import {Grid} from 'semantic-ui-react';
+import TVShow from './TVShow'
+import Filter from './Filter';
+
 
 class TVShowList extends Component {
 
-  mapAllShows = () => {
+  mapAllShows = (props, TVShow) => {
     if (!!props.searchTerm){
       props.shows.map((s) => {
         if (s.name.toLowerCase().includes(props.searchTerm)){

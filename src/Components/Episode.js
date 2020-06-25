@@ -1,13 +1,14 @@
 import React from 'react';
 
 const Episode = (props) => {
-  let { myEpisode } = props
+	// console.log(props);
+	let { eachEpisode } = props;
 
-  return (
-    <div>
-      Episode {myEpisode.number} - {myEpisode.name}
-    </div>
-  )
-}
+	return (
+		<div>
+			Episode {eachEpisode.number} - {eachEpisode.name}
+		</div>
+	);
+};
 
 export default Episode;

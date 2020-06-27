@@ -17,7 +17,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    Adapter.getShows().then(shows => this.setState({shows}))
+    Adapter.getShows().then((shows) => this.setState({shows}))
   }
 
   componentDidUpdate = () => {
@@ -43,7 +43,7 @@ class App extends Component {
   displayShows = () => {
     if (this.state.filterByRating){
       return this.state.shows.filter((s)=> {
-        return s.rating.average >= this.state.filterByRating
+        return s.rating.average <= this.state.filterByRating
       })
     } else {
       return this.state.shows
